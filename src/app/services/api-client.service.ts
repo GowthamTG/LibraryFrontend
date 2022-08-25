@@ -6,7 +6,7 @@ import { Observable } from "rxjs";
   providedIn: "root",
 })
 export class ApiClientService {
-  host: string = "https://git.heroku.com/library-backend-devrev.git";
+  host: string = "https://library-backend-devrev.herokuapp.com/";
 
   constructor(private http: HttpClient) {}
 
