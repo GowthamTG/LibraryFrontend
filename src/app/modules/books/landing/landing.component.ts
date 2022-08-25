@@ -1,14 +1,14 @@
-import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormGroup } from '@angular/forms';
+import { Component, OnInit } from "@angular/core";
+import { FormBuilder, FormGroup } from "@angular/forms";
 
-import { BreakpointObserver, Breakpoints } from '@angular/cdk/layout';
-import { ApiClientService } from 'src/app/services/api-client.service';
-import { Book } from 'src/app/interfaces/books.interface';
+import { BreakpointObserver, Breakpoints } from "@angular/cdk/layout";
+import { ApiClientService } from "src/app/services/api-client.service";
+import { Book } from "src/app/interfaces/books.interface";
 
 @Component({
-  selector: 'app-landing',
-  templateUrl: './landing.component.html',
-  styleUrls: ['./landing.component.scss'],
+  selector: "app-landing",
+  templateUrl: "./landing.component.html",
+  styleUrls: ["./landing.component.scss"],
 })
 export class LandingComponent implements OnInit {
   numbers = Array(10)
@@ -16,10 +16,10 @@ export class LandingComponent implements OnInit {
     .map((x, i) => i);
 
   filterForm: FormGroup = this.fb.group({
-    author: [''],
-    title: [''],
-    dateFrom: [''],
-    dateTo: [''],
+    author: [""],
+    title: [""],
+    dateFrom: [""],
+    dateTo: [""],
   });
   cols: number = 1;
   page = 1;
@@ -33,6 +33,8 @@ export class LandingComponent implements OnInit {
     sm: 2,
     xs: 1,
   };
+
+  totalItems: number = 0;
 
   constructor(
     private breakpointObserver: BreakpointObserver,
@@ -73,6 +75,7 @@ export class LandingComponent implements OnInit {
       .subscribe({
         next: (val) => {
           console.log(val);
+          this.totalItems = val.totalItems;
           this.books.push(...val.books);
         },
         error: (err) => {
@@ -98,10 +101,10 @@ export class LandingComponent implements OnInit {
         complete: () => {},
       });
     this.filterForm.setValue({
-      author: '',
-      title: '',
-      dateFrom: '',
-      dateTo: '',
+      author: "",
+      title: "",
+      dateFrom: "",
+      dateTo: "",
     });
   }
   onSubmit() {
