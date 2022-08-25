@@ -13,6 +13,7 @@ import { MatDatepickerModule } from "@angular/material/datepicker";
 import { MatOptionModule } from "@angular/material/core";
 import { MatNativeDateModule } from "@angular/material/core";
 import { MatInputModule } from "@angular/material/input";
+import { MatCheckboxModule } from "@angular/material/checkbox";
 
 import { InfiniteScrollModule } from "ngx-infinite-scroll";
 import { FlexLayoutModule } from "@angular/flex-layout";
@@ -34,6 +35,7 @@ import { LandingComponent } from "./landing/landing.component";
     MatSelectModule,
     MatDatepickerModule,
     MatNativeDateModule,
+    MatCheckboxModule,
     InfiniteScrollModule,
     FlexLayoutModule,
     BooksRoutingModule,
