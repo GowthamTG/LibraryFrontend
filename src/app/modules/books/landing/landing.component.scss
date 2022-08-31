@@ -57,6 +57,7 @@
 .example-card {
   min-height: 28rem;
   max-height: 28rem;
+  min-width: 12.5rem;
 }
 .image {
   object-fit: fill;
@@ -67,4 +68,11 @@ mat-card-title {
 }
 .form-group {
   width: 15rem;
+}
+.mt-5 {
+  margin-top: 5rem !important;
+}
+mat-card img {
+  object-fit: cover;
+  height: 300px;
 }
