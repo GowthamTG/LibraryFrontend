@@ -5,14 +5,13 @@
     <div
       fxLayout="row wrap"
       fxLayout.lt-sm="column"
-      fxLayoutGap="32px"
       fxLayoutAlign="space-around center"
     >
       <ng-container>
         <div
           class="app-card"
-          fxFlex="0 1 calc(25% - 32px)"
-          fxFlex.lt-md="0 1 calc(50% - 32px)"
+          fxFlex="0 1 "
+          fxFlex.lt-md="0 1 calc(50%)"
           fxFlex.lt-sm="100%"
         >
           <mat-form-field class="form-group" appearance="fill">
@@ -24,8 +23,8 @@
       <ng-container>
         <div
           class="app-card"
-          fxFlex="0 1 calc(25% - 32px)"
-          fxFlex.lt-md="0 1 calc(50% - 32px)"
+          fxFlex="0 1 "
+          fxFlex.lt-md="0 1 calc(50%)"
           fxFlex.lt-sm="100%"
         >
           <mat-form-field class="form-group" appearance="fill">
@@ -37,8 +36,8 @@
       <ng-container>
         <div
           class="app-card"
-          fxFlex="0 1 calc(25% - 32px)"
-          fxFlex.lt-md="0 1 calc(50% - 32px)"
+          fxFlex="0 1"
+          fxFlex.lt-md="0 1 calc(50%)"
           fxFlex.lt-sm="100%"
         >
           <mat-form-field class="form-group" appearance="fill">
@@ -59,8 +58,8 @@
       <ng-container>
         <div
           class="app-card"
-          fxFlex="0 1 calc(25% - 32px)"
-          fxFlex.lt-md="0 1 calc(50% - 32px)"
+          fxFlex="0 1 "
+          fxFlex.lt-md="0 1 calc(50%)"
           fxFlex.lt-sm="100%"
         >
           <mat-form-field class="form-group" appearance="fill">
@@ -78,25 +77,27 @@
           </mat-form-field>
         </div>
       </ng-container>
-      <!-- <ng-container>
-      <div
-        class="app-card"
-        fxFlex="0 1 calc(25% - 32px)"
-        fxFlex.lt-md="0 1 calc(50% - 32px)"
-        fxFlex.lt-sm="100%"
-      >
-        <mat-checkbox formControlName="sortYear"
-          >Sort Based on Published Year</mat-checkbox
-        >
-      </div>
-    </ng-container> -->
     </div>
-    <div class="container">
-      <button mat-raised-button type="submit" color="primary">Submit</button>
-      <button mat-raised-button type="reset" (click)="reset()" color="accent">
+    <div
+      class="container"
+      fxLayout="row wrap"
+      fxLayout.lt-sm="column"
+      fxLayoutAlign="space-around center"
+    >
+      <button class="button" mat-raised-button type="submit" color="primary">
+        Submit
+      </button>
+      <button
+        class="button"
+        mat-raised-button
+        type="reset"
+        (click)="reset()"
+        color="accent"
+      >
         Reset
       </button>
       <button
+        class="button"
         mat-raised-button
         routerLink="/add-books"
         type="button"
@@ -125,7 +126,7 @@
     [infiniteScrollThrottle]="1000"
     (scrolled)="onScroll()"
   >
-    <mat-grid-list [cols]="cols" rowHeight="550px">
+    <mat-grid-list [cols]="cols" rowHeight="550px" [gutterSize]="'10px'">
       <mat-grid-tile class="books" *ngFor="let book of books; let i = index">
         <mat-card class="example-card">
           <mat-card-header> </mat-card-header>
